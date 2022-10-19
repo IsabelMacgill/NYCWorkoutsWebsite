@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'edit.js') }}"></script>
+
+<script>
+    let data = {{data|tojson}} 
+    console.log(data)
+    let id = {{id|tojson}} 
+    console.log(id)
+</script>
+
+
+<link rel="stylesheet" href="{{url_for('static', filename='add.css')}}">
+
+
+<div class="container">
+<div class="viewpage row ">
+    <div id="added"></div>
+</div>
+<div class="viewpage row" id="titleClass">Edit Workout Studio</div>
+<form id="add">
+    <div id="titleForm"  class="form-group">
+      <label for="title">Name</label>
+      <input type="title" class="form-control" id="titleIn" aria-describedby="Title or Name of Workout Studio" placeholder="Name of Workout Studio">
+    </div> 
+    <div id="typeForm" class="form-group">
+        <label for="typeIn">Type(s) of Workouts</label> 
+        <input id="typeIn" class="form-control" placeholder="Type(s) of Workout (Enter with a comma between each)" aria-label="Search">
+    </div>
+    <div id="classesForm" class="form-group">
+        <label for="classesIn">Class(es) Offered</label> 
+        <input id="classesIn" class="form-control" placeholder="Classes Offered (Enter with a comma between each)" aria-label="Search">
+    </div>
+    <div id="locationsForm" class="form-group">
+        <label for="locationsIn">Locations</label> 
+        <input id="locationsIn" class="form-control" placeholder="Neighborhoods (Enter with a comma between each)" aria-label="Search">
+    </div>
+    <div id="priceForm" class="form-group">
+        <label for="priceIn">Price per Class</label> 
+        <input id="priceIn" class="form-control" placeholder="Price per Class (Enter a Number)" aria-label="Search">
+    </div>
+    <div id="mediaForm" class="form-group">
+        <label for="mediaIn">Media Link</label> 
+        <input id="mediaIn" class="form-control" placeholder="Media (Enter a Link)" aria-label="Search">
+    </div>
+    <div id="summaryForm" class="form-group">
+        <label for="summaryIn">Summary</label> 
+        <textarea id="summaryIn" class="form-control" placeholder="Summary of Workout" aria-label="Search"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary colorIn">Submit</button>
+    <button id="discard" type="button" class="btn btn-primary colorIn">Discard Changes</button>
+  </form>
+</div>
+
+{% endblock %}

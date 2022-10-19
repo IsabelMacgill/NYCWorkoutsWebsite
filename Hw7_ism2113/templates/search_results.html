@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'search.js') }}"></script>
+
+<script>
+    let title_data = {{title_data|tojson}}
+    let type_data = {{type_data|tojson}}
+    let location_data = {{location_data|tojson}}
+    console.log(location_data)
+    let search = {{search|tojson}}
+</script>
+
+<link rel="stylesheet" href="{{url_for('static', filename='search.css')}}">
+
+<div id="mainLabel"></div>
+<div id="resultsNum"></div>
+<div class="container">
+    <div class="row results">
+        <div id="studio" class="category"></div>
+    </div>
+    <div id="studioUpdates" class="updates"></div>
+       
+    <div class="row results">
+        <div id="type" class="category"></div>
+    </div>
+    <div id="typeUpdates" class="updates"></div>
+    <div class="row results">
+        <div id="location" class="category"></div>
+    </div>
+    <div id="locationUpdates" class="updates"></div>
+</div>
+
+
+{% endblock %}

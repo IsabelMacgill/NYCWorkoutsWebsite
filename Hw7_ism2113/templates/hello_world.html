@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'home.js') }}"></script>
+
+
+<script>
+    let data = {{data|tojson}} 
+    console.log(data)
+</script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+<div id="page" class="container">
+    <div id="home" class="row">
+        <div id="title" class="col">
+            NYC Workouts
+            <div id="description">Find new workout classes to try in NYC. Search by workout type,
+                fitness studio name, or neighborhood in Manhattan. Click on a workout class name to see a video, description, 
+                class types, location information, and price information!
+            </div>
+        </div>
+    </div>
+    <div id="updates" class="row"></div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+
+.viewpage{
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    padding: 10px; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    margin-top: 10px;
+}
+.viewpage a{
+    color: #990505;
+}
+#added{
+    border-radius: 10px;
+    box-shadow: 20px 10px 10px rgb(243, 222, 222);
+    margin-bottom:20px;
+}
+.colorIn{
+    background-color:#990505 !important;
+    border: none !important;
+}
